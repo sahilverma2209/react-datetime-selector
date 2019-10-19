@@ -51,11 +51,11 @@ class DateOrTimeSelector extends React.Component {
         const timePicker = this.props.timePicker || false
         const onOk = this.props.onOk ? this.props.onOk : (e) => { console.log(e)}
         return (
-            <div className="tapsync-date-picker">
+            <div className="date-picker-container">
                 {!timePicker ? 
-                    <input className={`tapsync-input ${this.props.inputClass || ''}`} type="text" value={this.state.inputDate} onChange={e => this.handleDateInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
+                    <input className={`picker-input ${this.props.inputClass || ''}`} type="text" value={this.state.inputDate} onChange={e => this.handleDateInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
                     :
-                    <input className={`tapsync-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
+                    <input className={`picker-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
                 }
                 {this.state.pickerOpen && 
                     <div className="picker-container">

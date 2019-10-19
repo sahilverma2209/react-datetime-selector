@@ -3,6 +3,8 @@ A simple Calendar and Time picker component which lets user pick Date/Time throu
 This component uses [Moment.js](https://momentjs.com/) behind the scenes for rendering the calendar and for re-rendering it when the user interacts.
 
 
+Find the [Demo here](https://sahilverma2209.github.io/react-datetime-selector/)
+
 # Installation
 
 ```

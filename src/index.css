@@ -9,7 +9,7 @@
     border-radius: 6px;
     border: 1px solid #cacce8;
     background: rgb(255, 255, 255);
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .picker-container::before{
@@ -25,23 +25,23 @@
     border-right: 1px solid #cacce8;
 }
 
-.tapsync-date-picker{
+.date-picker-container{
     height: 40px;
     position: relative;
 }
 
-.tapsync-input{
+.picker-input{
     outline: none;
     border-radius: 4px;
     height: 40px;
+    font-size: 14px;
     border: 1px solid rgba(34,36,38,.15);
+    padding: 0px 10px;
 }
 
-.tapsync-input:hover{
+.picker-input:hover{
     cursor: pointer;
 }
-
-
 
 .day-picker{
     display: flex;
@@ -190,10 +190,8 @@
     color: white;
 }
 
-
-
 .picker-footer{
-    padding: 7px 0px 10px;
+    padding: 17px 0px 10px;
     display: flex;
     justify-content: flex-end;
     font-size: 12px;
@@ -204,12 +202,14 @@
     border: 1px solid #979797;
     border-radius: 4px;
     color: #979797;
+    font-size: 14px;
     padding: 8px 16px;
     margin-right: 10px;
     width: 90px;
 }
 
 .picker-ok{ 
+    font-size: 14px;
     background: #5a43c8;
     border: 1px solid #979797;
     border-radius: 4px;
