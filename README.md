@@ -18,13 +18,23 @@ To use the component, simply import it on the top of the file and use **<DateOrT
 
 **Please Note :**
 
-It is Important to import it as :
+1. It is Important to import it as :
 
 ```js
 import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
 ```
-
 **Important:*** Please add the relative reference to the node_modules folder according to your directory setup
+
+2. It uses [Fontawesome]() for icons, therefore please [add Fontawesome 4](https://fontawesome.com/v4.7.0/get-started/) or [add Fontawesome 5](https://fontawesome.com/start) to your project.
+
+It is advisable to submit your email and get a embed code that looks like 
+
+```html
+<script src="https://kit.fontawesome.com/a57e85d9c9.js" crossorigin="anonymous"></script>
+```
+
+and can be placed ```<head></head>``` tags of your ```index.html``` file
+
 
 ## Example:
 

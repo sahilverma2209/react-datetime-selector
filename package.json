@@ -1,7 +1,18 @@
 {
   "name": "react-datetime-selector",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple Calendar component which lets user pick Date/Time through a visual interface",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sahilverma2209/react-datetime-selector"
+  },
+  "keywords": [
+    "react",
+    "datepicker",
+    "calendar",
+    "date",
+    "time"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
