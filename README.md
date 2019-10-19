@@ -17,16 +17,19 @@ The mode of use (date or time) is determined by passing prop ```timePicker={true
 To use the component, simply import it on the top of the file and use **<DateOrTimePicker />** to render
 
 **Please Note :**
+
 It is Important to import it as :
 
 ```
-import DateOrTimeSelector from '../../node_modules/react-datetime-selector/dist/index'
+import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
 ```
 
-## Example and further explanation:
+**Important:*** Please add the relative reference to the node_modules folder according to your directory setup
+
+## Example:
 
 ```js
-import DateOrTimeSelector from '../../node_modules/react-datetime-selector/dist/index'
+import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
 
 class App extends React.Component {
   constructor(){
@@ -38,23 +41,55 @@ class App extends React.Component {
     }
   }
   
+  handleSelectedDate(selectedDate){
+  
+    // can convert to JavaScript Date Object if fancied
+    var date = Date.parse(selectedDate) // returns milliseconds since January 1, 1970, 00:00:00 UTC
+    date = new Date(date) // creates JavaScript Date Object
+    
+    // do whatever else with it here (setState etc)
+    this.setState({ selectedDate })
+    
+  }
+  
   render(){
     return(
       <div>
-      
+        // Date Picker
         <DateOrTimePicker
-          onOk={selectedDate => this.setState({ selectedDate })}
+          onOk={selectedDate => {
+            // do stuff here
+            this.setState({ selectedDate })
+          }}
         />
-        
+        // Time Picker
         <DateOrTimePicker
           timePicker={true}
-          onOk={selectedTime => this.setState({ selectedTime })}
+          onOk={selectedDate => this.handleSelectedDate(selectedDate)}
         />
         
       </div>
     )
   }
 }
+
+```
+
+You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. 
+
+# Date Time Format
+
+Currently, the date is returned in the format "MM/DD/YYYY" ie ```"12/31/2019"``` 
+and the time is returned in the format "hh:mm a" ie ```"04:20 pm"``` 
+
+Both of them are returned as Strings.
+
+To create a Date object out of a string, you can do the following : 
+
+```
+var x = "12/31/2019"
+var date = Date.parse(x) // returns milliseconds since January 1, 1970, 00:00:00 UTC
+date = new Date(date) // creates JavaScript Date Object
 
 ```
 
