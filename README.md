@@ -20,7 +20,7 @@ To use the component, simply import it on the top of the file and use **<DateOrT
 
 It is Important to import it as :
 
-```
+```js
 import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
 ```
 
@@ -79,14 +79,14 @@ You'll need to pass the prop ```onOk``` which is a function that takes the selec
 
 # Date Time Format
 
-Currently, the date is returned in the format "MM/DD/YYYY" ie ```"12/31/2019"``` 
-and the time is returned in the format "hh:mm a" ie ```"04:20 pm"``` 
+Currently, the date is returned in the format "MM/DD/YYYY" ie ```js"12/31/2019"``` 
+and the time is returned in the format "hh:mm a" ie ```js"04:20 pm"``` 
 
 Both of them are returned as Strings.
 
 To create a Date object out of a string, you can do the following : 
 
-```
+```js
 var x = "12/31/2019"
 var date = Date.parse(x) // returns milliseconds since January 1, 1970, 00:00:00 UTC
 date = new Date(date) // creates JavaScript Date Object
