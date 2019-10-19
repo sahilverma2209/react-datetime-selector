@@ -79,8 +79,8 @@ You'll need to pass the prop ```onOk``` which is a function that takes the selec
 
 # Date Time Format
 
-Currently, the date is returned in the format "MM/DD/YYYY" ie ```js"12/31/2019"``` 
-and the time is returned in the format "hh:mm a" ie ```js"04:20 pm"``` 
+Currently, the date is returned in the format ```"MM/DD/YYYY"``` ie ```"12/31/2019"``` 
+and the time is returned in the format ```"hh:mm a"``` ie ```"04:20 pm"``` 
 
 Both of them are returned as Strings.
 
@@ -93,6 +93,11 @@ date = new Date(date) // creates JavaScript Date Object
 
 ```
 
+
+# Ongoing Work
+
+1. Removal of Moment.js dependency
+2. Provision for styling
 
 
 
