@@ -1,0 +1,285 @@
+.picker-container{
+    z-index: 9 !important;
+    position: absolute;
+    top: 120%;
+    /* height: 250px; */
+    width: 250px;
+    display:flex;
+    flex-direction: column;
+    border-radius: 6px;
+    border: 1px solid #cacce8;
+    background: rgb(255, 255, 255);
+}
+
+.picker-container::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    transform: rotate(-45deg);
+    top: -5px; 
+    left: 15px;
+    background: #d0d5eb;
+    border-top: 1px solid #cacce8;
+    border-right: 1px solid #cacce8;
+}
+
+.tapsync-date-picker{
+    height: 40px;
+    position: relative;
+}
+
+.tapsync-input{
+    outline: none;
+    border-radius: 4px;
+    height: 40px;
+    border: 1px solid rgba(34,36,38,.15);
+}
+
+.tapsync-input:hover{
+    cursor: pointer;
+}
+
+
+
+.day-picker{
+    display: flex;
+    flex-direction: column;
+}
+
+.day-header{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #d0d5eb;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.inc-month, .dec-month{
+    padding: 19px 10px;
+    color: #9390af;
+}
+
+.inc-month:hover, .dec-month:hover{
+    color: #4336b8;
+    cursor: pointer;
+}
+
+.month-year{
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.year-menu-btn-2{ 
+    margin-right: 6px;
+    color: #9390af;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.year-menu-btn-1{ 
+    margin-right: 6px;
+    color: #9390af;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.month-year-content{
+    padding: 5px;
+    border: 1px solid #d0d5eb;
+    border-radius: 4px;
+    display: flex;
+}
+
+.month-year-content:hover{
+   border: 1px solid rgb(241, 241, 241);
+   cursor: pointer;
+
+}
+
+.week-days{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px ;
+}
+
+.week-name{
+    flex: 1;
+    text-align: center;
+    padding: 5px 3px; 
+    color: rgb(155, 155, 155);
+}
+
+.day-chart{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px;
+}
+
+.day-item{
+    width: 33.72px;
+    padding: 5px 3px; 
+    border-radius: 4px;
+    text-align: center;
+}
+
+.day-item:hover{
+    cursor: pointer;border-radius: 4px;
+    background: rgb(240, 240, 240);
+}
+
+.active-day{
+    border-radius: 4px;
+    background: #4336b8;
+    color: white;
+}
+
+.active-day:hover{
+    border-radius: 4px;
+    background: #4336b8;
+    color: white;
+}
+
+
+.extra-days{
+    width: 33.72px;
+    /* flex: 1; */
+    padding: 5px 3px; 
+    text-align: center;
+    color: rgb(185, 185, 185);
+}
+
+.picker-year-select-container{
+    height: 202px;
+    padding: 6px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.picker-year{
+    width: 30%;
+    padding: 10px 0px; 
+    border-radius: 4px;
+    text-align: center;
+    margin: 3px;
+}
+
+.picker-year:hover{
+    cursor: pointer;
+    background: rgb(240, 240, 240);
+}
+
+.active-year{
+    border-radius: 4px;
+    background: #4336b8;
+    color: white;
+}
+
+.active-year:hover{
+    border-radius: 4px;
+    background: #4336b8;
+    color: white;
+}
+
+
+
+.picker-footer{
+    padding: 7px 0px 10px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.picker-cancel{ 
+    background: none;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    color: #979797;
+    padding: 8px 16px;
+    margin-right: 10px;
+    width: 90px;
+}
+
+.picker-ok{ 
+    background: #5a43c8;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    color: #fff;
+    padding: 5px 13px;
+    margin-right: 10px;
+    width: 90px;
+}
+
+
+
+/* time picker stuff  */
+
+.time-header{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #d0d5eb;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.time-edit-container{
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.scroll-select-container{
+    position: relative;
+    flex: 1; 
+    height: 100%;
+}
+
+.scroll-selector-area{
+    position: absolute;
+    border-top: 1px solid #ebeefa;
+    border-bottom: 1px solid #ebeefa;
+    width: 100%;
+    left: 5%;
+    z-index: -1;
+}
+
+.scroll-select-list{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 37%;
+    color: rgb(187, 187, 187);
+    position: relative;
+}
+
+.scroll-select-list::-webkit-scrollbar { width: 0 !important }
+
+.scroll-item{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 10px; */
+}
+
+.scroll-item:hover{
+    cursor: pointer;
+}
+
+.selected-time{
+    color: rgb(29, 29, 29);
+    font-weight: bold;
+    transition: all 0.2s ;
+    color: rgb(50, 50, 50);
+}
