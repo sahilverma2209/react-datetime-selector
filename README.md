@@ -16,7 +16,7 @@ The mode of use (date or time) is determined by passing prop ```timePicker={true
 
 To use the component, simply import it on the top of the file and use **<DateOrTimePicker />** to render
 
-** Please Note : **
+**Please Note :**
 It is Important to import it as :
 
 ```
@@ -25,7 +25,7 @@ import DateOrTimeSelector from '../../node_modules/react-datetime-selector/dist/
 
 ## Example and further explanation:
 
-```
+```js
 import DateOrTimeSelector from '../../node_modules/react-datetime-selector/dist/index'
 
 class App extends React.Component {
