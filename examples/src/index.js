@@ -15,7 +15,7 @@ class App extends React.Component {
     render(){
         console.log(this.state)
         return (
-            <React.Fragment>
+            <div style={{display: 'flex', width: '40%', justifyContent: 'space-between', margin: '0 auto', paddingTop: '100px'}}>
                 <DateOrTimeSelector 
                     timePicker={true}
                     onOk={value => this.setState({ selectedTime: value})}
@@ -23,7 +23,7 @@ class App extends React.Component {
                 <DateOrTimeSelector 
                     onOk={value => this.setState({ selectedDate: value})}
                 />
-            </React.Fragment>
+            </div>
         )
     }
     
