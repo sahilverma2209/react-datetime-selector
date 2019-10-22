@@ -80,7 +80,7 @@ class DatePicker extends React.Component {
             this.props.onOk(this.props.inputDate) // sends the date to the outermost DateAndTimePickerComponent
             this.props.closePicker()
         } else { 
-            this.setState({ yearOpen: false }) 
+            this.setState({ yearOpen: false, month: 0 }) 
         }
 
         // if(this.props.timePicker){
