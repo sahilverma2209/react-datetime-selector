@@ -25,7 +25,6 @@ class DatePicker extends React.Component {
         const yearToDisplay = currentMoment.format("YYYY")
         const startGap = DAYS_OF_WEEK[currentMoment.startOf('month').format("dddd")]
         const endGap = DAYS_OF_WEEK[currentMoment.endOf('month').format("dddd")]
-        console.log('on mount end gap = ',endGap)
         const daysInMonth = parseInt(currentMoment.endOf('month').format('DD'), 10)
         var dontChangeDayOnArrow = this.props.selectedDate.split('/')[1]
         var input = currentMoment.format("MM/DD/YYYY").split('/')
@@ -48,8 +47,7 @@ class DatePicker extends React.Component {
             const monthToDisplay = currentMoment.format("MMM")
             const yearToDisplay = currentMoment.format("YYYY")
             const startGap = DAYS_OF_WEEK[currentMoment.startOf('month').format("dddd")]
-            const endGap = DAYS_OF_WEEK[currentMoment.endOf('month').format("dddd")]
-            console.log(endGap)
+            const endGap = DAYS_OF_WEEK[currentMoment.endOf('month').format("dddd")]\
             const daysInMonth = parseInt(currentMoment.endOf('month').format('DD'), 10)
             var dontChangeDayOnArrow = this.props.selectedDate.split('/')[1]
             var input = currentMoment.format("MM/DD/YYYY").split('/')
