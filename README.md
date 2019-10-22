@@ -69,6 +69,8 @@ class App extends React.Component {
       <div>
         // Date Picker
         <DateOrTimePicker
+          pickerWidth={280} // default = 0
+          zIndex={10} // default = 1 
           onOk={selectedDate => {
             // do stuff here
             this.setState({ selectedDate })
