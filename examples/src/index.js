@@ -20,6 +20,7 @@ class App extends React.Component {
                     Date Picker <br/><br/>
                     <DateOrTimeSelector 
                         pickerWidth={280}
+                        zIndex={8}
                         onOk={value => this.setState({ selectedDate: value})}
                     />
                 </div>

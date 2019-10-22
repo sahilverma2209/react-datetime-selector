@@ -1,5 +1,4 @@
 .picker-container{
-    z-index: 9 !important;
     position: absolute;
     top: 120%;
     /* height: 250px; */
