@@ -13,7 +13,7 @@ class App extends React.Component {
     }
 
     render(){
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div style={{display: 'flex', width: '40%', justifyContent: 'space-between', margin: '0 auto', paddingTop: '100px', fontSize: '16px', fontFamily: '\'Lato\', sans-serif', fontWeight: '200'}}>
                 <div>

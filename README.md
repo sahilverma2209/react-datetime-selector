@@ -89,6 +89,8 @@ class App extends React.Component {
 
 You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. 
 
+By default, if ```onOk``` is not passed, the component will ```console.log()``` the selected date 
+
 # Date Time Format
 
 Currently, the date is returned in the format ```"MM/DD/YYYY"``` ie ```"12/31/2019"``` 
