@@ -62,7 +62,7 @@ class DateOrTimeSelector extends React.Component {
                         {!timePicker ? 
                             <DatePicker
                                 {...this.state}
-                                pickerWidth={this.props.pickerWidth}
+                                pickerWidth={this.props.pickerWidth || 250}
                                 onOk={onOk}
                                 changeSelectedDate={selectedDate => this.setState({ selectedDate })}
                                 changeInputDate={selectedDate => this.setState({ inputDate: selectedDate })}
@@ -72,7 +72,7 @@ class DateOrTimeSelector extends React.Component {
                             />
                             :
                             <TimePicker
-                                pickerWidth={this.props.pickerWidth}
+                                pickerWidth={this.props.pickerWidth || 250}
                                 {...this.state}
                                 onOk={onOk}
                                 changeInputTime={inputTime => this.setState({ inputTime })}
