@@ -90,15 +90,13 @@ class App extends React.Component {
 # Props that can be passed
 
 1. onOk (function)
-You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. 
-
-By default, if ```onOk``` is not passed, the component will ```console.log()``` the selected date 
+* You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. By default, if ```onOk``` is not passed, the component will ```console.log()``` the selected date 
 
 2. zIndex (number)
-You can change the z-index of the picker component according to your project needs by passin the prop ```zIndex```. Default value = 1
+* You can change the z-index of the picker component according to your project needs by passin the prop ```zIndex```. Default value = 1
 
 3. pickerWidth (number)
-This is used to set the width of the picker by passing the prop ```pickerWidth```. The dates in the calendar are rendered according to this width. Default value = 250
+* This is used to set the width of the picker by passing the prop ```pickerWidth```. The dates in the calendar are rendered according to this width. Default value = 250
 
 # Date Time Format
 
