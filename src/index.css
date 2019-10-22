@@ -116,19 +116,26 @@
     padding: 5px 3px; 
     color: rgb(155, 155, 155);
 }
+.day-item{
+    flex: 1;
+    padding: 10px 3px; 
+    border-radius: 4px;
+    text-align: center;
+}
 
 .day-chart{
     display: flex;
     flex-flow: row wrap;
-    padding: 5px;
+    padding: 6px;
+}
+.extra-days{
+    min-width: 25px;
+    max-width: 25px;
+    padding: 10px 3px; 
+    text-align: center;
+    color: rgb(185, 185, 185);
 }
 
-.day-item{
-    width: 33.72px;
-    padding: 5px 3px; 
-    border-radius: 4px;
-    text-align: center;
-}
 
 .day-item:hover{
     cursor: pointer;border-radius: 4px;
@@ -148,13 +155,7 @@
 }
 
 
-.extra-days{
-    width: 33.72px;
-    /* flex: 1; */
-    padding: 5px 3px; 
-    text-align: center;
-    color: rgb(185, 185, 185);
-}
+
 
 .picker-year-select-container{
     height: 202px;

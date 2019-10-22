@@ -19,6 +19,7 @@ class App extends React.Component {
                 <div>
                     Date Picker <br/><br/>
                     <DateOrTimeSelector 
+                        pickerWidth={280}
                         onOk={value => this.setState({ selectedDate: value})}
                     />
                 </div>

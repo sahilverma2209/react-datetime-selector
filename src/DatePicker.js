@@ -2,9 +2,6 @@ import React from 'react'
 import Moment from 'moment'
 import uuid from 'uuid'
 import { DAYS_OF_WEEK } from './constants'
-
-
-
 class DatePicker extends React.Component {
     constructor(){
         super()
@@ -22,6 +19,28 @@ class DatePicker extends React.Component {
         }
     }
 
+    componentDidMount(){
+        const currentMoment = this.getActiveMonth()
+        const monthToDisplay = currentMoment.format("MMM")
+        const yearToDisplay = currentMoment.format("YYYY")
+        const startGap = DAYS_OF_WEEK[currentMoment.startOf('month').format("dddd")]
+        const endGap = DAYS_OF_WEEK[currentMoment.endOf('month').format("dddd")]
+        console.log('on mount end gap = ',endGap)
+        const daysInMonth = parseInt(currentMoment.endOf('month').format('DD'), 10)
+        var dontChangeDayOnArrow = this.props.selectedDate.split('/')[1]
+        var input = currentMoment.format("MM/DD/YYYY").split('/')
+        input[1] = dontChangeDayOnArrow
+        input = input.join('/')
+        this.setState({
+            monthToDisplay,
+            yearToDisplay,
+            startGap,
+            daysInMonth,
+            endGap,
+            pickerControlDate: input
+        })
+    }
+
     componentDidUpdate(prevProps, prevState){
         const currentMoment = this.getActiveMonth()
          // when month changes on arrow left/right
@@ -30,6 +49,7 @@ class DatePicker extends React.Component {
             const yearToDisplay = currentMoment.format("YYYY")
             const startGap = DAYS_OF_WEEK[currentMoment.startOf('month').format("dddd")]
             const endGap = DAYS_OF_WEEK[currentMoment.endOf('month').format("dddd")]
+            console.log(endGap)
             const daysInMonth = parseInt(currentMoment.endOf('month').format('DD'), 10)
             var dontChangeDayOnArrow = this.props.selectedDate.split('/')[1]
             var input = currentMoment.format("MM/DD/YYYY").split('/')
@@ -104,13 +124,14 @@ class DatePicker extends React.Component {
     }
 
     renderCalendar(){
+        var itemWidth = ((this.props.pickerWidth-12)/7)-6+'px'
         const currentMoment =  Moment(this.state.pickerControlDate, 'MM/DD/YYYY')
         const daysInPrevMonth = parseInt(this.getActiveMonth().subtract(1, 'months').endOf('month').format('DD'), 10)
         // console.log(currentMoment)
         var days = []
         // build the dates array ------
         for(var i = 0; i < this.state.startGap; i++){
-            days.push(<div className="day-item extra-days" key={uuid()}>{daysInPrevMonth-i}</div>)
+            days.push(<div className="day-item extra-days" style={{ minWidth: itemWidth, mazWidth: itemWidth }} key={uuid()}>{daysInPrevMonth-i}</div>)
         }
         days.reverse()
 
@@ -126,7 +147,7 @@ class DatePicker extends React.Component {
             ) ? 'active-day' : ''
 
             days.push(
-                <div className={`day-item ${selectedDayClass}`} key={uuid()}
+                <div className={`day-item ${selectedDayClass}`} style={{ minWidth: itemWidth, mazWidth: itemWidth }} key={uuid()}
                     onClick={() => this.changeDate(`${month}/${day}/${year}`)}
                 >
                     {j}
@@ -135,7 +156,7 @@ class DatePicker extends React.Component {
         }
 
         for(var k=1; k< (7-this.state.endGap); k++){
-            days.push(<div className="day-item extra-days" key={uuid()}>{k}</div>)
+            days.push(<div className="day-item extra-days" style={{ minWidth: itemWidth, mazWidth: itemWidth }} key={uuid()}>{k}</div>)
         }
 
         return days
@@ -166,9 +187,10 @@ class DatePicker extends React.Component {
     render(){
         // console.log(this.props)
         const invalid = this.state.monthToDisplay === 'Invalid date'
+        var itemWidth = ((this.props.pickerWidth-12)/7)-6+'px'
         return (
             <React.Fragment>
-                <div className="day-picker">
+                <div className="day-picker" id="day-picker" >
 
                     <div className="day-header">
                         {!this.state.yearOpen && <i className="fas fa-angle-left dec-month" onClick={() => this.setState({ month: this.state.month-1 })}></i>}
@@ -182,7 +204,7 @@ class DatePicker extends React.Component {
                     {!this.state.yearOpen ? 
                         <React.Fragment>
                             <div className="week-days">
-                                {Object.keys(DAYS_OF_WEEK).map(item => <div key={uuid()} className="week-name">{item[0]}</div>)}
+                                {Object.keys(DAYS_OF_WEEK).map(item => <div key={uuid()} className="week-name" style={{ minWidth: itemWidth, mazWidth: itemWidth }}>{item[0]}</div>)}
                             </div>
 
                             <div className="day-chart">
