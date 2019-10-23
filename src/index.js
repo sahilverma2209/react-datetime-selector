@@ -51,12 +51,17 @@ class DateOrTimeSelector extends React.Component {
         const timePicker = this.props.timePicker || false
         const onOk = this.props.onOk ? this.props.onOk : (e) => { console.log(e)}
         const zIndex = this.props.zIndex || 1
+        const isBigScreen = window.matchMedia("(min-width: 769px)").matches
         return (
             <div className="date-picker-container">
-                {!timePicker ? 
-                    <input className={`picker-input ${this.props.inputClass || ''}`} type="text" value={this.state.inputDate} onChange={e => this.handleDateInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
+                {!timePicker ?
+                    (isBigScreen ? 
+                    <input className={`picker-input ${this.props.inputClass || ''}`} type="text" value={this.state.inputDate} onChange={e => this.handleDateInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> :
+                    <input readOnly className={`picker-input ${this.props.inputClass || ''}`} type="text" value={this.state.inputDate} onChange={e => this.handleDateInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> )
                     :
-                    <input className={`picker-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
+                    (isBigScreen ?
+                    <input className={`picker-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> :
+                    <input readOnly className={`picker-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> )
                 }
                 {this.state.pickerOpen && 
                     <div className="mask" style={{ zIndex: zIndex-1 }}>
