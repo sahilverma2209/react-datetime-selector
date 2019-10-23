@@ -59,30 +59,32 @@ class DateOrTimeSelector extends React.Component {
                     <input className={`picker-input ${this.props.inputClass || ''}`} tpye="text"  value={this.state.inputTime} onChange={e => this.handleTimeInputChange(e)} onClick={() => this.setState({ pickerOpen: true })}/> 
                 }
                 {this.state.pickerOpen && 
-                    <div className="picker-container" id="picker-container" style={{ width: this.props.pickerWidth+'px', zIndex }} >
-                        {!timePicker ? 
-                            <DatePicker
-                                {...this.state}
-                                pickerWidth={this.props.pickerWidth || 250}
-                                onOk={onOk}
-                                changeSelectedDate={selectedDate => this.setState({ selectedDate })}
-                                changeInputDate={selectedDate => this.setState({ inputDate: selectedDate })}
-                                changeRememberDate={rememberDateForCancel => this.setState({ rememberDateForCancel })}
-                                openPicker={() => this.setState({ pickerOpen: true })}
-                                closePicker={() => this.setState({ pickerOpen: false })}
-                            />
-                            :
-                            <TimePicker
-                                pickerWidth={this.props.pickerWidth || 250}
-                                {...this.state}
-                                onOk={onOk}
-                                changeInputTime={inputTime => this.setState({ inputTime })}
-                                changeSelectedTime={selectedTime => this.setState({ selectedTime })}
-                                openPicker={() => this.setState({ pickerOpen: true })}
-                                closePicker={() => this.setState({ pickerOpen: false })}
-                            />
-                        }
-                        
+                    <div className="mask" style={{ zIndex: zIndex-1 }}>
+                        <div className="picker-container" id="picker-container" style={{ width: this.props.pickerWidth+'px', zIndex }} >
+                            {!timePicker ? 
+                                <DatePicker
+                                    {...this.state}
+                                    pickerWidth={this.props.pickerWidth || 250}
+                                    onOk={onOk}
+                                    changeSelectedDate={selectedDate => this.setState({ selectedDate })}
+                                    changeInputDate={selectedDate => this.setState({ inputDate: selectedDate })}
+                                    changeRememberDate={rememberDateForCancel => this.setState({ rememberDateForCancel })}
+                                    openPicker={() => this.setState({ pickerOpen: true })}
+                                    closePicker={() => this.setState({ pickerOpen: false })}
+                                />
+                                :
+                                <TimePicker
+                                    pickerWidth={this.props.pickerWidth || 250}
+                                    {...this.state}
+                                    onOk={onOk}
+                                    changeInputTime={inputTime => this.setState({ inputTime })}
+                                    changeSelectedTime={selectedTime => this.setState({ selectedTime })}
+                                    openPicker={() => this.setState({ pickerOpen: true })}
+                                    closePicker={() => this.setState({ pickerOpen: false })}
+                                />
+                            }
+                            
+                        </div>
                     </div>
                 }
             </div>

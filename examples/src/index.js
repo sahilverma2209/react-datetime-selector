@@ -2,29 +2,34 @@ import React from 'react';
 import { render} from 'react-dom';
 import DateOrTimeSelector from '../../src';
 
+import './example.css'
+
 class App extends React.Component {
     constructor(){
         super()
 
         this.state = {
             selectedTime: '',
-            selectedDate: ''
+            selectedDate: '',
+            datePickerOpen: false
         }
     }
 
     render(){
         // console.log(this.state)
+        
         return (
-            <div style={{display: 'flex', width: '40%', justifyContent: 'space-between', margin: '0 auto', paddingTop: '100px', fontSize: '16px', fontFamily: '\'Lato\', sans-serif', fontWeight: '200'}}>
-                <div>
+            <div className="demo-container">
+                <div className="demo-1">
                     Date Picker <br/><br/>
-                    <DateOrTimeSelector 
+                    <DateOrTimeSelector
+                        datePickerOpen={this.state.datePickerOpen} 
                         pickerWidth={280}
                         zIndex={8}
                         onOk={value => this.setState({ selectedDate: value})}
                     />
                 </div>
-                <div>
+                <div className="demo-1">
                     Time Picker <br/><br/>
                     <DateOrTimeSelector 
                         timePicker={true}
