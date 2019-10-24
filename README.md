@@ -22,20 +22,20 @@ To use the component, simply import it on the top of the file and use **<DateOrT
 
 1. It is Important to import it as :
 
-  ```js
-    import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
-  ```
-  **Important:*** Please add the relative reference to the node_modules folder according to your directory setup
+    ```js
+      import DateOrTimeSelector from '../node_modules/react-datetime-selector/dist/index'
+    ```
+    * **Important:** Please add the relative reference to the node_modules folder according to your directory setup
 
 2. It uses [Fontawesome]() for icons, therefore please [add Fontawesome 4](https://fontawesome.com/v4.7.0/get-started/) or [add Fontawesome 5](https://fontawesome.com/start) to your project.
 
-  It is advisable to submit your email and get a embed code that looks like 
+    * It is advisable to submit your email and get a embed code that looks like 
 
-  ```html
-  <script src="https://kit.fontawesome.com/a57e85d9c9.js" crossorigin="anonymous"></script>
-  ```
+    ```html
+    <script src="https://kit.fontawesome.com/a57e85d9c9.js" crossorigin="anonymous"></script>
+    ```
 
-  and can be placed ```<head></head>``` tags of your ```index.html``` file
+    and can be placed ```<head></head>``` tags of your ```index.html``` file
 
 
 ## Example:
@@ -92,13 +92,13 @@ class App extends React.Component {
 # Props that can be passed
 
 1. **onOk** (function)
-  * You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. By default, if ```onOk``` is not passed, the component will ```console.log()``` the selected date 
+    * You'll need to pass the prop ```onOk``` which is a function that takes the selected date/time as its argument. After recieveing the date/time in this function you can do whatever you please. By default, if ```onOk``` is not passed, the component will ```console.log()``` the selected date 
 
 2. **zIndex** (number)
-  * You can change the z-index of the picker component according to your project needs by passin the prop ```zIndex```. Default value = 1
+    * You can change the z-index of the picker component according to your project needs by passin the prop ```zIndex```. Default value = 1
 
 3. **pickerWidth** (number)
-  * This is used to set the width of the picker by passing the prop ```pickerWidth```. The dates in the calendar are rendered according to this width. Default value = 250
+    * This is used to set the width of the picker by passing the prop ```pickerWidth```. The dates in the calendar are rendered according to this width. Default value = 250
 
 # Date Time Format
 
